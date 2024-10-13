@@ -1,0 +1,107 @@
+@keyframes splash {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes skullapear {
+    0% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes activebomb {
+    0% {
+        filter: none
+    }
+    100% {
+        filter: sepia(1) hue-rotate(-50deg);
+    }
+}
+
+body {
+    position: relative;
+    background-image: url(images/woodbackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.fruit {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    transition: all 0.6s ease-out;
+    cursor: pointer;
+}
+.fruit-falling {
+    transition: all 0.6s ease-in;
+}
+.fruit-tagged {
+    transition: all 0.1s ease-out;
+}
+.fruit-splash {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    animation: splash 1s ease-in-out forwards;
+}
+.fruit-bomb {
+    width: 80px;
+    animation: activebomb 0.3s ease-in-out infinite;
+}
+.dead-icon {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    transition: all 0.2s ease;
+    animation: skullapear 0.2s ease-in forwards;
+}
+
+.contador {
+    position: absolute;
+    padding-top: 10px;
+    color: white;
+    font-size: xx-large;
+    font-weight: 900;
+    left: 50%;
+    transform: translate(-50%);
+}
+.fruit-container{
+    position: relative;
+    height: 100vh;
+}
+.homescreen{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-weight: 900;
+    font-size: x-large;
+    align-items: center;
+    padding-top: 5%;
+    text-shadow: -2px 2px 0 #000,
+                         2px 2px 0 #000,
+                         2px -2px 0 #000,
+                         -2px -2px 0 #000;
+}
+.logo {
+    width: 40%;
+    height: auto;
+}
+.playbutton {
+    width: 30%;
+    height: auto;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.playbutton:hover{
+    transform: scale(1.2);
+}
